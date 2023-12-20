@@ -1,0 +1,101 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+}
+    body{
+        background-color: gray;
+    }
+    
+    section {
+        display:flex;
+        flex-direction :column;
+        justify-content: center ;
+        align-items:center;
+    }
+    header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: royalblue;
+    }
+    .container-img{
+        display:flex;
+        flex-direction :column;
+        justify-content: center ;
+        align-items: center;
+        margin: 10px;
+    }
+    .container-p{
+        display:flex;
+        justify-content: center ;
+        align-items: center;
+    }
+    .container-p a{
+        color: royalblue;
+    }
+    .tex-regreso a{
+        color: white;
+    }
+    img{
+        height:80px;
+        width:80px;
+    }
+    .container-select {
+        margin: 10px;
+    }
+    .container-select label{
+        margin-right:10px ;
+    }
+    .container-select select{
+        padding: 5px;
+    }
+    form {
+        background-color: white ;
+        display:flex;
+        flex-direction :column;
+        justify-content: center ;
+        align-items: center;
+        padding:30px;
+        width: 500px;
+        margin : 20px;
+        border-radius: 5px;
+    }
+    .container-input{
+        display:flex;
+        flex-direction :column;
+        justify-content: center ;
+        align-items: flex-start;
+    }
+    .container-button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+        button{
+            padding: 5px;
+            margin: 5px;
+            border-radius: 5px;
+            width: 300px;
+            background-color: black;
+            border: none;
+            color: white;
+        }
+        button:hover{
+            background-color: royalblue;
+            border: none;
+            color: white;
+            cursor: pointer;
+            transition: all 0.5s;
+        }
+
+    input{
+        margin: 10px;
+        width: 300px;
+        padding: 5px;
+        border-radius: 2px;
+        border: 1px solid gray;
+    }
+    
+
