@@ -6,7 +6,7 @@
     font-family: 'Montserrat', sans-serif;
 }
 body{
-    background-color: skyblue;
+    background-color: skyblue!important;
 
 }
 nav{
@@ -64,6 +64,9 @@ section{
     justify-content: center;
     align-items: center;
 }
+section a{
+    margin: 20px;
+}
 table{
     width: 50%;
     text-align: center;
@@ -84,4 +87,7 @@ tr:nth-child(even){
 tr:hover td{
     background-color:lightsteelblue;
     color: white;
+}
+.btn{
+    margin: 20px;
 }

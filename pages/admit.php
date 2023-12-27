@@ -17,6 +17,7 @@ session_start();
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de ROYDP</title>
     <link rel="shortcut icon" href="../img/logo-policia.png" type="image/x-icon">
         <link rel="stylesheet" href="../css/admit.css"/>
@@ -29,6 +30,7 @@ session_start();
        <link rel="preconnect" href="https://fonts.googleapis.com">
        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
 </head>
 <body>
@@ -50,9 +52,9 @@ session_start();
 
       <div class="menu" id="menu">
             <ul>
-            <li><a href=""><i class="bi bi-moon"></i> Modo oscuro</a></li>
-            <li><a href=""><i class="bi bi-question-circle"></i> Preguntas frecuentes</a></li>
-            <li><a href="cerrarSeccion.php"><i class="bi bi-box-arrow-left"></i> Cerrar sección</a></li>  
+            <li><a class="text-decoration-none" href=""><i class="bi bi-moon"></i> Modo oscuro</a></li>
+            <li><a class="text-decoration-none" href=""><i class="bi bi-question-circle"></i> Preguntas frecuentes</a></li>
+            <li><a class="text-decoration-none" href="cerrarSeccion.php"><i class="bi bi-box-arrow-left"></i> Cerrar sección</a></li>  
             </ul>
 
         </div>
@@ -65,8 +67,10 @@ session_start();
             <table>
                 <thead>
                      <tr>
+                    <th>Nombre completo</th>
+                    <th>Cedula</th>
+                    <th>Jeraquia</th>
                     <th>Correo</th>
-                    <th>Cotraseña</th>
                     <th>Cargo</th>
                     </tr>
                 </thead>
@@ -79,8 +83,11 @@ session_start();
                    
               
            <tr>
+                <td><?php echo $filas['nombre_completo']; ?></td>
+                <td><?php echo $filas['cedula'];?></td>
+                <td><?php echo $filas['jerarquia']; ?></td>
                <td><?php echo $filas['correo'] ; ?></td>
-               <td><?php echo $filas['contrasena']; ?></td>
+              
                <td><?php echo $filas['id_cargo'] == '1' ? 'administrador' : 'empleado'; ?></td>
            </tr>
                
@@ -88,6 +95,10 @@ session_start();
           
 
             </table>
+
+                <a href="exel.php" class="btn btn-success">Descargar Excel</a>
+            
+
         </section>
    
     <script src="../js/menu.js"></script>

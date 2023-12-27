@@ -6,7 +6,7 @@
 
  
   if (!empty($_POST['correo']) && !empty($_POST['contrasena'])) {
-    $sql = "INSERT INTO users (correo, contrasena,id_cargo) VALUES ('{$_POST['correo']}','{$_POST['contrasena']}','{$_POST['id_cargo']}' )";
+    $sql = "INSERT INTO users (nombre_completo,cedula,jerarquia,correo, contrasena,id_cargo) VALUES ('{$_POST['nombre_completo']}','{$_POST['cedula']}','{$_POST['jerarquia']}','{$_POST['correo']}','{$_POST['contrasena']}','{$_POST['id_cargo']}' )";
     $stmt = $conexion->prepare($sql);
     $password = password_hash($_POST['contrasena'], PASSWORD_BCRYPT);
     $usuario= $_POST["correo"];
@@ -71,6 +71,12 @@
 				</select>
 			</div>
             <div class="container-input">
+                 <label>Nombre y Apellido</label>
+                <input type="text" placeholder="Ingrese su Nombre y apellido" name="nombre_completo"></input>
+                 <label>Cedula de identidad</label>
+                <input type="text" placeholder="Ingrese su CI" name="cedula"></input>
+                    <label>Jerarquía</label>
+                <input type="text" placeholder="Ingrese jerarquía" name="jerarquia"></input>
                 <label for="">Correo</label>
                 <input type="email" placeholder="Ingrese su correo" name="correo"></input>
          <label>Contraseña</label>
