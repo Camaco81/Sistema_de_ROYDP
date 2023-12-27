@@ -28,18 +28,11 @@
 
 		<form action="iniciar_seccion.php" method="post">
 
-			<div>
+			<header>
 				<h1>Inicia Seccón</h1>
-			</div>
+			</header>
    
 
-			<div class="container-select">
-          <label for="">Opción de inicio</label>
-				<select>
-					<option value="Empleado">Empleado</option>
-					<option value="Administrador">Administrador</option>
-				</select>
-			</div>
 			<div class="container-input">
 				<label>Usuario</label>
 				<input type="text" placeholder="Ingrese su Usuario" name="correo"></input> 

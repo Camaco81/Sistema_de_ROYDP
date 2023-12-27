@@ -6,7 +6,7 @@
 
  
   if (!empty($_POST['correo']) && !empty($_POST['contrasena'])) {
-    $sql = "INSERT INTO users (correo, contrasena) VALUES ('{$_POST['correo']}','{$_POST['contrasena']}' )";
+    $sql = "INSERT INTO users (correo, contrasena,id_cargo) VALUES ('{$_POST['correo']}','{$_POST['contrasena']}','{$_POST['id_cargo']}' )";
     $stmt = $conexion->prepare($sql);
     $password = password_hash($_POST['contrasena'], PASSWORD_BCRYPT);
     $usuario= $_POST["correo"];
@@ -19,6 +19,7 @@
    </script>';
    exit();
 } else {
+
      if ($stmt->execute()) {
       $message = '<div class="alert alert-success">Usuario Registrado Exitosamente</div>';
     } else {
@@ -63,10 +64,10 @@
 
              <header><h1>Registro</h1></header>
              <div class="container-select">
-                <label for="">Opción de registro</label>
-				<select>
-					<option value="Empleado">Empleado</option>
-					<option value="Administrador">Administrador</option>
+                <label for="">Tipo de usuario</label>
+				<select name="id_cargo">
+					<option value="1">Administrador</option>
+					<option value="2">Empleado</option>
 				</select>
 			</div>
             <div class="container-input">
