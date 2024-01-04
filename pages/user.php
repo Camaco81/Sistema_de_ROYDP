@@ -1,9 +1,9 @@
 <?php
 $message='';
 session_start();
-    $usuario=$_SESSION['username'];
+    $usuario=$_SESSION['correo'];
     if (!isset($usuario)) {
-        header("location:iniciar_seccion.php");
+        header("location:../bienvenida.html");
     }
     else{
         $message= "<p> $usuario</p>";
@@ -14,6 +14,7 @@ session_start();
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de ROYDP</title>
     <link rel="shortcut icon" href="../img/logo-policia.png" type="image/x-icon">
         <link rel="stylesheet" href="../css/principal.css"/>
@@ -37,17 +38,22 @@ session_start();
       <p> <?= $message ?></p>
          <?php endif; ?>
         </div>
-     
+    
 
+        <a id="activar-menu" >
+            <i class="bi bi-nut-fill"></i>
+        </a>
 
-        <a href="#" id="activar-menu" ><i class="bi bi-nut-fill"></i></a>
     </nav>
       
             
+            <?php $id_user =$_SESSION['id'];
+
+            echo $id_user ?>
 
       <div class="menu" id="menu">
             <ul>
-            <li><a href="perfil.html"><i class="bi bi-person-fill"></i> Personalizar perfil</a></li>
+            <li><a href="perfil.php"><i class="bi bi-person-fill"></i> Personalizar perfil</a></li>
             <li><a href=""><i class="bi bi-moon"></i> Modo oscuro</a></li>
             <li><a href=""><i class="bi bi-question-circle"></i> Preguntas frecuentes</a></li>
             <li><a href="cerrarSeccion.php"><i class="bi bi-box-arrow-left"></i> Cerrar sección</a></li>  
@@ -63,6 +69,7 @@ session_start();
         <p>¿Desea agreagar mas informacion?</p>
         <p>Dirigete a ajustes <i class="bi bi-nut-fill"></i> en  personaliza tu perfil y arega mas informacion detallada para mejora tus datos para facilitar tu informacinon en tu trabajo</p>
     </section>
+
     <script src="../js/menu.js"></script>
 </body>
 </html>

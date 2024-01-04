@@ -6,8 +6,9 @@
     font-family: 'Montserrat', sans-serif;
 }
 body{
-    background-color: lightgray;
+    background-color: lightblue;
 }
+
 nav{
     display: flex;
     justify-content: space-between;
@@ -41,6 +42,14 @@ header {
 nav i{
     font-size: 25px;
 }
+
+#activar-menu{
+    color: black;
+    cursor: pointer;
+}
+
+
+
 .info-basic{
     display: flex;
     flex-direction: column;

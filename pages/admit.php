@@ -2,7 +2,7 @@
 
 $message='';
 session_start();
-    $usuario=$_SESSION['username'];
+    $usuario=$_SESSION['correo'];
     if (!isset($usuario)) {
         header("location:iniciar_seccion.php");
     }
@@ -10,7 +10,7 @@ session_start();
         $message= "<p> $usuario</p>";
     }
      include("../php/conexion.php");
-    $usuarios= "SELCT * FROM users";
+    $usuarios= "SELECT * FROM users";
    
   ?>
   <!DOCTYPE html>
@@ -60,7 +60,7 @@ session_start();
         </div>
 
            <header>
-               <h1>Lista de Usuarios</h1>
+               <h1>Lista de familiares</h1>
            </header>
         <section>
          

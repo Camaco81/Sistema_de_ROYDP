@@ -3,6 +3,7 @@
 session_start();
 
 if (!empty($_POST["boton"])) {
+
   if (empty($_POST["coreo"])and empty($_POST["contrasena"])) {
     echo '<div class="alert alert-danger">Los Campos estan vacios</div>';
   } else {
@@ -12,21 +13,22 @@ if (!empty($_POST["boton"])) {
    $resultado= $sql;
    $filas= mysqli_fetch_array($resultado);
 
+    $_SESSION['correo']=$usuario;
+    $_SESSION['id']=$filas['id'];
    if ($filas['id_cargo']==1) {
-    $_SESSION['username']=$usuario;
-     header("location:admit.php"); 
-   }else
-   if ($filas['id_cargo']==2) {
-     $_SESSION['username']=$usuario;
-     header("location:user.php"); 
-   }
-   else{
-      echo '<div class="alert alert-danger">Acceso denegado</div>';
-   
-   }
-   
-  }
-  
+    header("location:admit.php"); 
+  }else
+  if ($filas['id_cargo']==2) {
+   header("location:user.php"); 
+ }
+ else{
+  echo '<div class="alert alert-danger">Acceso denegado</div>';
+
+}
+
+}
+
 }
 
 ?>
+
