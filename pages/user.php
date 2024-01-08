@@ -41,15 +41,13 @@ session_start();
     
 
         <a id="activar-menu" >
-            <i class="bi bi-nut-fill"></i>
+           <i class="bi bi-nut-fill"></i>
         </a>
 
     </nav>
       
             
-            <?php $id_user =$_SESSION['id'];
-
-            echo $id_user ?>
+            <?php $id_user =$_SESSION['id']; ?>
 
       <div class="menu" id="menu">
             <ul>

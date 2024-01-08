@@ -89,6 +89,11 @@ if (!empty($_POST['guardar2']) ){
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<script type="text/javascript">
+		function confirmar() {
+			return confirm('¿Estas seguro?, se eliminaran los datos');
+		}
+	</script>
 
 
 </head>
@@ -220,6 +225,7 @@ if (!empty($_POST['guardar2']) ){
                     <th>Cedula</th>
                     <th>Nacimiento</th>
                     <th>Sexo</th>
+                    <th>Acciones</th>
                     </tr>
                 </thead>
                
@@ -239,6 +245,8 @@ if (!empty($_POST['guardar2']) ){
                <td><?php echo $filas['cedula'] ; ?></td>
                <td><?php echo $filas['nacimiento'] ; ?></td>
                <td><?php echo $filas['sexo'] ; ?></td>
+               <td><?php  echo"<a href='editar.php?id=".$filas['id_familia']."'>Editar</a>"?></td>
+          <td><?php  echo"<a href='eliminar.php?id=".$filas['id_familia']."' onclick='return confirmar()'>Eliminar</a>"?></td>
            </tr>
                
             <?php }mysqli_free_result($resultado); ?>
