@@ -95,7 +95,7 @@ if (!empty($_POST['guardar2']) ){
 		}
 	</script>
 
-
+	
 </head>
 <body>
 	<br>
@@ -174,7 +174,7 @@ if (!empty($_POST['guardar2']) ){
 			
 	</form>
 
-	<div class="">
+	<div id="datos_guardados">
 		<h4 class="text text-success">Datos guardados</h4>
 	<?php 
 	$consultasql= $conexion->query("SELECT * FROM users WHERE id='$id_user'");
@@ -245,8 +245,8 @@ if (!empty($_POST['guardar2']) ){
                <td><?php echo $filas['cedula'] ; ?></td>
                <td><?php echo $filas['nacimiento'] ; ?></td>
                <td><?php echo $filas['sexo'] ; ?></td>
-               <td><?php  echo"<a href='editar.php?id=".$filas['id_familia']."'>Editar</a>"?></td>
-          <td><?php  echo"<a href='eliminar.php?id=".$filas['id_familia']."' onclick='return confirmar()'>Eliminar</a>"?></td>
+               <td><?php  echo"<a class='btn btn-primary' href='editar.php?id=".$filas['id_familia']."'>Editar</a>"?></td>
+          <td><?php  echo"<a class='btn btn-danger' href='eliminar.php?id=".$filas['id_familia']."' onclick='return confirmar()'>Eliminar</a>"?></td>
            </tr>
                
             <?php }mysqli_free_result($resultado); ?>
@@ -285,6 +285,11 @@ if (!empty($_POST['guardar2']) ){
 	</section>
 		
 </form>
+
+ 
+ <a href="vistaPrevia.php">Vista Previa</a>
+ <br>
 <script src="../js/form.js"></script>
+
 </body>
 </html>
