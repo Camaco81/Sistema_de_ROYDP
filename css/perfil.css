@@ -23,9 +23,29 @@ h1{
 
 .datos_personales{
 	display: flex;
-	flex-direction: row;
+	flex-direction:column;
+	justify-content: center;
 }
+.datos_personales p{
+	margin-right:5px;
+	margin-left: 5px;
 
+}
+.datos_guardados{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.datos_guardados div{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 5px;
+}
+.datos_guardados div > p{
+	margin-right: 10px;
+	margin-left: 10px;
+}
 form{
 	display: flex;
 	flex-direction: column;

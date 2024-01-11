@@ -1,5 +1,7 @@
 let menu= document.getElementById('menu');
 let activarMenu= document.getElementById('activar-menu');
+let activo=document.getElementById('activo');
+let color=document.querySelectorAll('.bg-claro');
 
 
 activarMenu.addEventListener('click',()=>{
@@ -10,6 +12,15 @@ activarMenu.addEventListener('click',()=>{
     }
 
 });
+
+activo.addEventListener('click',()=>{
+    for (var i = 0; i < color.length; i++) {
+      color[i].classList.toggle("bg-oscuro");
+      color[i].classList.toggle("bg-claro");
+    }
+
+});
+
 
 
 

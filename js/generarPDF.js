@@ -1,3 +1,4 @@
+//funcion para generar pdf que funciona escaneando toda lapgina html y la comvierte a pdf
 document.addEventListener("DOMContentLoaded",()=>{
 const $boton = document.querySelector("#btnCrearPdf");
 $boton.addEventListener("click",()=>{

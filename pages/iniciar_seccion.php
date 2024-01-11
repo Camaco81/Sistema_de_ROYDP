@@ -29,7 +29,7 @@
 		<form action="iniciar_seccion.php" method="post">
 
 			<header>
-				<h1>Inicia Seccón</h1>
+				<h1>Iniciar Sección</h1>
 			</header>
    
 
@@ -40,8 +40,10 @@
 				 <label>Contraseña</label>
 				<input type="password" placeholder="Ingrese su Contraseña" name="contrasena"></input>
 			</div>
+			<br>
 	
-		 <input type="submit" name="boton"></input>
+		 <input type="submit" name="boton" class="btn btn-primary"> </input>
+		 <br>
 		 <div class="container-p">
 			<p>¿No tienes una cuenta?  <a href="registro.php">Registrate Aquí</a></p>
 		 </div>

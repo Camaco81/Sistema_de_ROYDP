@@ -13,18 +13,17 @@ $id_user =$_SESSION['id'];
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Vista previa</title>
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-     <!-- <link rel="stylesheet" href="../css/vistaprevia.css"> -->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
      <div class="container">
           <br>
-         <a id="btnCrearPdf" class="btn btn-primary ">Generar reporte</a> 
+         <a id="btnCrearPdf" class="btn btn-danger ">Generar reporte pdf</a> 
      </div>
        
-     
-     <div id="datos_guardados" class="container">
-          <h1 class="text-center text text-primary">Mis datos</h4>
+           <h1 class="text-center text text-primary">Mis datos</h4>
+     <div id="datos_guardados" class="container ">
+         
      <?php 
      $consultasql= $conexion->query("SELECT * FROM users WHERE id='$id_user'");
              $resultadosql= $consultasql;
@@ -52,7 +51,7 @@ $id_user =$_SESSION['id'];
             <p><b>Padece de alguna condición fisica</b><br> <?php echo $fila_user['padece_condicion_fisica'] ; ?></p>
             <p><b>Especifique</b><br> <?php echo $fila_user['espesifique2'] ; ?></p>
      </div>
-<section class="list-familia">
+<section class="container">
 
                <h1 class="text-center text-primary">Carga Familiar</h1>
          

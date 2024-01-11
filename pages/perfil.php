@@ -6,8 +6,7 @@ $message = '';
 
 $id_user =$_SESSION['id'];
 
-// $tabla_familia= "SELECT * FROM familia WHERE id_user='$id_user'";
-
+//si el los datos del formulario no estan vacios va ejecutar la sentencia if que atualizara los datos del usuario de la base de datos
 
 if(!empty($_POST['guardar1'])) {
 
@@ -53,6 +52,7 @@ if(!empty($_POST['guardar1'])) {
 
 $message2 = '';
 
+// si los datos del formulario no estan vacios va ejecutar la sentencia if que nos va aguardar los datos en la base de datos
 
 if (!empty($_POST['guardar2']) ){
 	$sql = "INSERT INTO familia (id_user,parentesco,nombre_completo,edad,condicion_medica,cedula,nacimiento,sexo) VALUES ('{$id_user}','{$_POST['parentesco']}','{$_POST['nombre_completo']}','{$_POST['edad']}','{$_POST['condicion_medica']}','{$_POST['cedula']}','{$_POST['fecha_nacimiento']}','{$_POST['sexo']}')";
@@ -117,12 +117,12 @@ if (!empty($_POST['guardar2']) ){
 <?php endif; ?>
 
 
-<section class="datos_personales">
-
-		<form action="perfil.php" method="post">
+<section class="datos_personales" >
+	<!-- formulario para actualizar los datos del usuario -->
+	<form action="perfil.php" method="post">
 		
 			<h3 class="text text-primary">Datos personales</h3>
-			<label for="">lugar y fecha de nacimiento</label>
+			<label for="">Lugar y fecha de nacimiento</label>
 			<input type="text" required name="nacimiento" >
 			<label for="">Edad</label>
 			<input type="number" required name="edad">
@@ -173,37 +173,61 @@ if (!empty($_POST['guardar2']) ){
 		</div>
 			
 	</form>
+	 
 
-	<div id="datos_guardados">
-		<h4 class="text text-success">Datos guardados</h4>
+	
+</section>
+<br>
+ <a >Mostrar datos guardados  <span id="mostrardatos" class=" btn btn-primary text-white">+</span></a>
+<div class="datos_guardados" id="dato_g" style="display:none;">
+	<br>
+		<h2 class="text-center text-success">Datos guardados</h2>
+
+		<!-- aqui se van amostral los datos guardados en la base de datos mediante una consulta la base de datos y luegos lo imprimimos  -->
 	<?php 
 	$consultasql= $conexion->query("SELECT * FROM users WHERE id='$id_user'");
              $resultadosql= $consultasql;
             $fila_user= mysqli_fetch_array($resultadosql);?>
-
+            <div>
+            	
             <p> <b>Lugar y Fecha de nacimiento:</b> <br> <?php echo $fila_user['nacimiento'] ; ?></p>
-            <p><b>Edad</b> <br> <?php echo $fila_user['edad'] ; ?></p>
-            <p><b>Estado civil</b><br><?php echo $fila_user['estado_civil'] ; ?></p>
-            <p><b>Grupo saguineo</b><br> <?php echo $fila_user['grupo_sanguineo'] ; ?></p>
-            <p><b>Numero de telefono</b><br> <?php echo $fila_user['telefono'] ; ?></p>
-            <p><b>Talla de pantalon</b><br> <?php echo $fila_user['talla_pantalon'] ; ?></p>
-            <p><b>Talla de camisa</b><br> <?php echo $fila_user['talla_camisa'] ; ?></p>
-            <p><b>Talla de botas</b><br> <?php echo $fila_user['talla_botas'] ; ?></p>
-            <p><b>Grado de instrucción</b><br> <?php echo $fila_user['grado_de_instruccion'] ; ?></p>
-            <p><b>Fecha de ingreso</b><br> <?php echo $fila_user['fecha_ingreso'] ; ?></p>
-            <p><b>Cohorte de Promoción</b><br> <?php echo $fila_user['cohorte_promocion'] ; ?></p>
-            <p><b>Fecha de ultimo Ascenso</b><br> <?php echo $fila_user['fecha_ultimo_ascenso'] ; ?></p>
-            <p><b>Tiempo en el rango</b><br> <?php echo $fila_user['tiempo_en_rango'] ; ?></p>
-            <p><b>Tiempo en el servicio</b><br> <?php echo $fila_user['tiempo_en_servicio'] ; ?></p>
+            <p><b>Edad:</b> <br> <?php echo $fila_user['edad'] ; ?></p>
+            <p><b>Estado civil:</b><br><?php echo $fila_user['estado_civil'] ; ?></p>
+            </div>
+           <div>
+           	 <p><b>Grupo saguineo:</b><br> <?php echo $fila_user['grupo_sanguineo'] ; ?></p>
+            <p><b>Numero de telefono:</b><br> <?php echo $fila_user['telefono'] ; ?></p>
+            <p><b>Talla de pantalon:</b><br> <?php echo $fila_user['talla_pantalon'] ; ?></p>
+           </div>
+           <div>
+           	<p><b>Talla de camisa:</b><br> <?php echo $fila_user['talla_camisa'] ; ?></p>
+            <p><b>Talla de botas:</b><br> <?php echo $fila_user['talla_botas'] ; ?></p>
+            <p><b>Grado de instrucción:</b><br> <?php echo $fila_user['grado_de_instruccion'] ; ?></p>
+           </div>
+            
+            <div>
+            	<p><b>Fecha de ingreso:</b><br> <?php echo $fila_user['fecha_ingreso'] ; ?></p>
+            <p><b>Cohorte de Promoción:</b><br> <?php echo $fila_user['cohorte_promocion'] ; ?></p>
+            <p><b>Fecha de ultimo Ascenso:</b><br> <?php echo $fila_user['fecha_ultimo_ascenso'] ; ?></p>
+            </div>
+            <div>
+            	 <p><b>Tiempo en el rango:</b><br> <?php echo $fila_user['tiempo_en_rango'] ; ?></p>
+            <p><b>Tiempo en el servicio:</b><br> <?php echo $fila_user['tiempo_en_servicio'] ; ?></p>
             <p><b>Última fecha del servicio del RETEN</b><br> <?php echo $fila_user['ultima_fecha_servicio_RETEN'] ; ?></p>
-            <p><b>Serial de la credencial</b><br> <?php echo $fila_user['serial_de_credencial'] ; ?></p>
-            <p><b>Estudia actualmente</b><br> <?php echo $fila_user['estudia_actualmente'] ; ?></p>
-              <p><b>Especifique</b><br> <?php echo $fila_user['espesifique1'] ; ?></p>
-             <p><b>Universidad donde cursa los estudios</b><br> <?php echo $fila_user['universidad_donde_estudia'] ; ?></p>
-            <p><b>Padece de alguna condición fisica</b><br> <?php echo $fila_user['padece_condicion_fisica'] ; ?></p>
-            <p><b>Especifique</b><br> <?php echo $fila_user['espesifique2'] ; ?></p>
+            </div>
+            <div>
+            	 <p><b>Serial de la credencial:</b><br> <?php echo $fila_user['serial_de_credencial'] ; ?></p>
+            <p><b>Estudia actualmente:</b><br> <?php echo $fila_user['estudia_actualmente'] ; ?></p>
+              <p><b>Especifique:</b><br> <?php echo $fila_user['espesifique1'] ; ?></p>
+            </div>
+            <div>
+            	 <p><b>Universidad donde cursa los estudios:</b><br> <?php echo $fila_user['universidad_donde_estudia'] ; ?></p>
+            <p><b>Padece de alguna condición fisica:</b><br> <?php echo $fila_user['padece_condicion_fisica'] ; ?></p>
+            <p><b>Especifique:</b><br> <?php echo $fila_user['espesifique2'] ; ?></p>
+            </div>
+           
+           
 	</div>
-</section>
 
 	
 
@@ -229,6 +253,7 @@ if (!empty($_POST['guardar2']) ){
                     </tr>
                 </thead>
                
+               <!-- //aca hacemos una consulta ala base datos para mostrar los datos de guardados que pertencen al acarga familiar del usuario -->
             
                 <?php 
                 $sql= $conexion->query("SELECT * FROM familia WHERE id_user='$id_user'");
@@ -255,9 +280,11 @@ if (!empty($_POST['guardar2']) ){
         </section>
         <br>
         <br>
-        <a >Carga Familiar <span id="mostrarFamilia" class=" btn btn-info">+</span></a>
+        <a >Carga Familiar <span id="mostrarFamilia" class=" btn btn-primary text-white">+</span></a>
         <br>
         <br>
+
+        <!-- //formulario para guardar la carga familiar del usuario -->
 
 <form action="perfil.php" method="post" id="family" style="display: none;">
 	<section class="familiar">
@@ -287,7 +314,7 @@ if (!empty($_POST['guardar2']) ){
 </form>
 
  
- <a href="vistaPrevia.php">Vista Previa</a>
+ <a href="vistaPrevia.php" class="btn btn-dark">Vista Previa</a>
  <br>
 <script src="../js/form.js"></script>
 

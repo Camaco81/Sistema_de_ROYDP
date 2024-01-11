@@ -55,7 +55,7 @@
                 <img src="../img/logo-policia.png" alt="">
          </div>
 
-         <p class="tex-regreso"><a href="../bienvenida.html"><i class="bi bi-arrow-left"></i> Regresar</a></p>
+         <p><a href="../bienvenida.html" class="text-decoration-none"><i class="bi bi-arrow-left"></i> Regresar</a></p>
 
           <?php if(!empty($message)): ?>
       <p> <?= $message ?></p>
@@ -83,9 +83,11 @@
                 <input type="password" placeholder="Ingrese contraseña" name="contrasena"></input>
             <label>Repetir Contraseña</label>
                 <input type="password" placeholder="Confirme  contraseña" name="cofirm_contrasena"></input>
+                <br>
                  <div class="container-button">
-                    <input type="submit" name="boton1"></input>
+                    <input type="submit" name="boton1" class="btn  btn-primary"></input>
                 </div>
+                <br>
                     <div class="container-p">
                         <p>¿Ya tienes una cuenta?  <a href="iniciar_seccion.php">Inicia sección Aquí</a></p>
                      </div>
