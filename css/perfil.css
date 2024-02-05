@@ -13,9 +13,17 @@ body{
 }
 
 
-heder{
+header{
+	background-color: lightgray;
 	display: flex;
-	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+	padding: 10px;
+}
+header img{
+	height: 80px;
+	width: 80px;
 }
 h1{
 	text-align: center;

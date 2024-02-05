@@ -28,37 +28,13 @@ header {
     align-items: center;
 }
 
-.menu{
-    display:none;
-    position: fixed;
-    right: 0;
-    padding: 10px;
-    background-color: gray;
-    border-radius: 5px;
-    color: white;
-}
-.menu ul{
-    display: flex;
-    flex-direction: column;
-}
-
-.menu li{
-    margin: 10px;
-}
-.menu a{
-    color: white;
-    cursor: pointer;
-}
 nav i{
     font-size: 25px;
 }
-
-#activar-menu{
-    color: black;
-    cursor: pointer;
+nav img{
+    height: 80px;
+    width: 80px;
 }
-
-
 
 .info-basic{
     display: flex;
@@ -69,3 +45,19 @@ nav i{
 .info-basic p{
     margin: 10px;
 }
+main{
+    display: flex;
+}
+aside{
+    background-color: black;
+    height: 90vh;
+    width: 20%;
+}
+aside a{
+    color: white;
+   }
+
+   aside li{
+    margin: 10px;
+    cursor: pointer;
+   }

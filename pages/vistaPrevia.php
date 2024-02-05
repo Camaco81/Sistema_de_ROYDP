@@ -12,6 +12,7 @@ $id_user =$_SESSION['id'];
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Vista previa</title>
+     <link rel="shortcut icon" href="../img/logo-policia.png" type="image/x-icon">
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
      <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
@@ -28,7 +29,7 @@ $id_user =$_SESSION['id'];
      $consultasql= $conexion->query("SELECT * FROM users WHERE id='$id_user'");
              $resultadosql= $consultasql;
             $fila_user= mysqli_fetch_array($resultadosql);?>
-
+          <p> <b>Nombre y apellido:</b> <br> <?php echo $fila_user['nombre_completo'] ; ?></p>
             <p> <b>Lugar y Fecha de nacimiento:</b> <br> <?php echo $fila_user['nacimiento'] ; ?></p>
             <p><b>Edad</b> <br> <?php echo $fila_user['edad'] ; ?></p>
             <p><b>Estado civil</b><br><?php echo $fila_user['estado_civil'] ; ?></p>
@@ -65,6 +66,7 @@ $id_user =$_SESSION['id'];
                     <th>Cedula</th>
                     <th>Nacimiento</th>
                     <th>Sexo</th>
+                    <th>Estado</th>
                     </tr>
                 </thead>
                
@@ -84,6 +86,7 @@ $id_user =$_SESSION['id'];
                <td><?php echo $filas['cedula'] ; ?></td>
                <td><?php echo $filas['nacimiento'] ; ?></td>
                <td><?php echo $filas['sexo'] ; ?></td>
+               <td><?php echo $filas['estado'] ; ?></td>
            </tr>
                
             <?php }mysqli_free_result($resultado); ?>

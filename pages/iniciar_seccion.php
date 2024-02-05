@@ -19,7 +19,7 @@
 		<div class="container-img">
 						 <img src="../img/logo-policia.png" alt="">
 		</div>
-		<p class="tex-regreso"><a href="../bienvenida.html"><i class="bi bi-arrow-left"></i> Regresar</a></p>
+		<p class="tex-regreso"><a href="../bienvenida.html" class="text-decoration-none"><i class="bi bi-arrow-left"></i> Regresar</a></p>
 
 		<?php 
    	include("../php/conexion.php");
@@ -34,10 +34,10 @@
    
 
 			<div class="container-input">
-				<label>Usuario</label>
+				<label><i class="bi bi-person-fill"></i> Usuario</label>
 				<input type="text" placeholder="Ingrese su Usuario" name="correo"></input> 
 				   
-				 <label>Contraseña</label>
+				 <label><i class="bi bi-lock-fill"></i> Contraseña</label>
 				<input type="password" placeholder="Ingrese su Contraseña" name="contrasena"></input>
 			</div>
 			<br>
@@ -45,7 +45,7 @@
 		 <input type="submit" name="boton" class="btn btn-primary"> </input>
 		 <br>
 		 <div class="container-p">
-			<p>¿No tienes una cuenta?  <a href="registro.php">Registrate Aquí</a></p>
+			<p>¿No tienes una cuenta?  <a href="registro.php" class="text-decoration-none text-info">Registrate Aquí</a></p>
 		 </div>
 		</form>
 	</section>

@@ -55,7 +55,7 @@ $message2 = '';
 // si los datos del formulario no estan vacios va ejecutar la sentencia if que nos va aguardar los datos en la base de datos
 
 if (!empty($_POST['guardar2']) ){
-	$sql = "INSERT INTO familia (id_user,parentesco,nombre_completo,edad,condicion_medica,cedula,nacimiento,sexo) VALUES ('{$id_user}','{$_POST['parentesco']}','{$_POST['nombre_completo']}','{$_POST['edad']}','{$_POST['condicion_medica']}','{$_POST['cedula']}','{$_POST['fecha_nacimiento']}','{$_POST['sexo']}')";
+	$sql = "INSERT INTO familia (id_user,parentesco,nombre_completo,edad,condicion_medica,cedula,nacimiento,sexo,estado) VALUES ('{$id_user}','{$_POST['parentesco']}','{$_POST['nombre_completo']}','{$_POST['edad']}','{$_POST['condicion_medica']}','{$_POST['cedula']}','{$_POST['fecha_nacimiento']}','{$_POST['sexo']}','{$_POST['estado']}')";
 	$stmt = $conexion->prepare($sql);
 	
 		if ($stmt->execute()) {
@@ -80,7 +80,7 @@ if (!empty($_POST['guardar2']) ){
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Sistema de ROYDP</title>
-	<link rel="shortcut icon" href="img/logo-policia.png" type="image/x-icon">
+	<link rel="shortcut icon" href="../img/logo-policia.png" type="image/x-icon">
 	<link rel="stylesheet" href="../css/principal.css"/>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
 	<link rel="stylesheet" href="../css/perfil.css">
@@ -98,15 +98,11 @@ if (!empty($_POST['guardar2']) ){
 	
 </head>
 <body>
-	<br>
-	<a href="user.php" class="text-decoration-none "><i class="bi bi-arrow-left"></i> Regresar</a>
-	<br>
+	
 
 	<header>
-		<div>
-			<h1>Perfil</h1>
-			<p>En esta sección podras agregar información extra a tu perfil</p>
-		</div>
+		<h1>Sistema De ROYDP</h1>
+		<img src="../img/logo-policia.png">
 	</header>
 
 	<?php if(!empty($message)): ?>
@@ -115,8 +111,14 @@ if (!empty($_POST['guardar2']) ){
 	<?php if(!empty($message2)): ?>
 	<p> <?= $message2 ?></p>
 <?php endif; ?>
+<br>
+	<a href="user.php" class="text-decoration-none "><i class="bi bi-arrow-left"></i> Regresar</a>
+	<br>
 
-
+<div>
+			<h3 class="text-center">Perfil</h3>
+			<p>En esta sección podras agregar información extra a tu perfil</p>
+		</div>
 <section class="datos_personales" >
 	<!-- formulario para actualizar los datos del usuario -->
 	<form action="perfil.php" method="post">
@@ -234,9 +236,9 @@ if (!empty($_POST['guardar2']) ){
 
 <br>
 
- <header>
+
          <h4>Lista de familiares</h4>
-   </header>
+  
         <section class="list-familia">
          
             <table class="table table-hover">
@@ -249,7 +251,7 @@ if (!empty($_POST['guardar2']) ){
                     <th>Cedula</th>
                     <th>Nacimiento</th>
                     <th>Sexo</th>
-                    <th>Acciones</th>
+                    <th>Estado</th>
                     </tr>
                 </thead>
                
@@ -270,8 +272,9 @@ if (!empty($_POST['guardar2']) ){
                <td><?php echo $filas['cedula'] ; ?></td>
                <td><?php echo $filas['nacimiento'] ; ?></td>
                <td><?php echo $filas['sexo'] ; ?></td>
+               <td><?php echo $filas['estado'] ; ?></td>
                <td><?php  echo"<a class='btn btn-primary' href='editar.php?id=".$filas['id_familia']."'>Editar</a>"?></td>
-          <td><?php  echo"<a class='btn btn-danger' href='eliminar.php?id=".$filas['id_familia']."' onclick='return confirmar()'>Eliminar</a>"?></td>
+          <td>
            </tr>
                
             <?php }mysqli_free_result($resultado); ?>
@@ -303,6 +306,8 @@ if (!empty($_POST['guardar2']) ){
 		<input type="text"  required name="condicion_medica" >
 		<label for="">Sexo</label>
 		<input type="text" requiered name="sexo">
+		<label for="">Estado</label>
+		<input type="text" requiered name="estado">
 	</input>
 	<br>
 	<div>
@@ -310,11 +315,12 @@ if (!empty($_POST['guardar2']) ){
 			
 		</div>
 	</section>
+	<br>
 		
 </form>
 
  
- <a href="vistaPrevia.php" class="btn btn-dark">Vista Previa</a>
+ <a href="vistaPrevia.php" target="_blank" class="btn btn-dark">Vista Previa</a>
  <br>
 <script src="../js/form.js"></script>
 

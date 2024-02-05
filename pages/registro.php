@@ -55,7 +55,7 @@
                 <img src="../img/logo-policia.png" alt="">
          </div>
 
-         <p><a href="../bienvenida.html" class="text-decoration-none"><i class="bi bi-arrow-left"></i> Regresar</a></p>
+         <p><a href="../bienvenida.html" class="text-decoration-none text-white"><i class="bi bi-arrow-left"></i> Regresar</a></p>
 
           <?php if(!empty($message)): ?>
       <p> <?= $message ?></p>
@@ -89,7 +89,7 @@
                 </div>
                 <br>
                     <div class="container-p">
-                        <p>¿Ya tienes una cuenta?  <a href="iniciar_seccion.php">Inicia sección Aquí</a></p>
+                        <p class="text-white">¿Ya tienes una cuenta? <a href="iniciar_seccion.php" class="text-decoration-none text-info">Inicia sección Aquí</a></p>
                      </div>
             </form>
           

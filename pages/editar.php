@@ -25,8 +25,9 @@
 		$cedula=$_POST["cedula"];
 		$fecha_nacimiento=$_POST["fecha_nacimiento"];
 		$sexo=$_POST["sexo"];
+		$estado=$_POST["estado"];
 
-		$sql ="UPDATE familia SET parentesco='$parentesco',nombre_completo='$nombre',edad='$edad',cedula='$cedula',nacimiento='$fecha_nacimiento',sexo='$sexo'  WHERE id_familia='".$id."'";
+		$sql ="UPDATE familia SET parentesco='$parentesco',nombre_completo='$nombre',edad='$edad',cedula='$cedula',nacimiento='$fecha_nacimiento',sexo='$sexo',estado='$estado'  WHERE id_familia='".$id."'";
 		$resultado=mysqli_query($conexion,$sql);
 
 		if ($resultado) {
@@ -79,6 +80,8 @@
 		<input type="text"  required name="condicion_medica" >
 		<label for="">Sexo</label>
 		<input type="text" requiered name="sexo">
+		<label for="">Estado</label>
+		<input type="text" requiered name="estado">
 	</input>
 	<br>
 	<div>

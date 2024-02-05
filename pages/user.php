@@ -40,16 +40,15 @@ session_start();
         </header>
     
 
-        <a id="activar-menu" >
-           <i class="bi bi-nut-fill"></i>
-        </a>
+        <img src="../img/logo-policia.png">
 
     </nav>
       
             
             <?php $id_user =$_SESSION['id']; ?>
 
-      <div class="menu" id="menu">
+            <main>
+                <aside>
             <ul>
             <li><a href="perfil.php"><i class="bi bi-person-fill"></i> Personalizar perfil</a></li>
             <li><a id="activo"><i class="bi bi-moon"></i> Modo oscuro</a></li>
@@ -57,7 +56,7 @@ session_start();
             <li><a href="cerrarSeccion.php"><i class="bi bi-box-arrow-left"></i> Cerrar sección</a></li>  
             </ul>
 
-        </div>
+        </aside>
     <section class="info-basic">
         <h1>Información basica acerca de como funciona el sistema</h1>
         <p>Este sistema se encarga de ayudarte a manejar tus datos de una manera mas sencilla y practica, si quieres agregar datos y manejar tu informacion
@@ -71,6 +70,9 @@ session_start();
         <p>¿Desea cerra sección? dirigete a ajustes <i class="bi bi-nut-fill"></i> en  Cerrar sección <i class="bi bi-box-arrow-left"></i></p>
     </section>
 
+            </main>
+
+      
     <script src="../js/menu.js"></script>
 </body>
 </html>
