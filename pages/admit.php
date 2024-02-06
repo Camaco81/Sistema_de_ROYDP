@@ -33,40 +33,30 @@ session_start();
        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
 </head>
-<body>
-
-    <nav>
+<body class="bg-claro">
          <header class="title-info">
-             <h1>Bienvenido al Sistema De ROYDP  admit</h1>
+             <h1>Bienvenido al Sistema De ROYDP  Administrador </h1>
              <?php if(!empty($message)): ?>
       <p> <?= $message ?></p>
          <?php endif; ?>
-        </header>
-     
-
-
-        <a  id="activar-menu" ><i class="bi bi-nut-fill"></i></a>
-    </nav>
-      
-            
-
-      <div class="menu" id="menu">
+        </header>     
+        
+        <main> 
+               
+      <aside>
             <ul>
-            <li><a class="text-decoration-none" href=""><i class="bi bi-moon"></i> Modo oscuro</a></li>
-            <li><a class="text-decoration-none" href=""><i class="bi bi-question-circle"></i> Preguntas frecuentes</a></li>
-            <li><a class="text-decoration-none" href="cerrarSeccion.php"><i class="bi bi-box-arrow-left"></i> Cerrar sección</a></li>  
+            <li><a class="text-white text-decoration-none" id="activo"><i class="bi bi-moon"></i> Modo oscuro</a></li>
+            <li><a class="text-white text-decoration-none" href=""><i class="bi bi-question-circle"></i> Preguntas frecuentes</a></li>
+            <li><a class="text-white text-decoration-none" href="cerrarSeccion.php"><i class="bi bi-box-arrow-left"></i> Cerrar sección</a></li>  
             </ul>
+        </aside>
 
-        </div>
+           
+      
+            <table class="table table-hover">
+                <thead class="bg bg-info">
 
-           <header>
-               <h1>Lista de familiares</h1>
-           </header>
-        <section>
-         
-            <table>
-                <thead>
-                     <tr>
+                    <tr>
                     <th>Nombre completo</th>
                     <th>Cedula</th>
                     <th>Jeraquia</th>
@@ -96,11 +86,13 @@ session_start();
 
             </table>
 
-                <a href="exel.php" class="btn btn-success">Descargar Excel</a>
+              <div class="centrar">
+              <a href="exel.php" class="btn btn-success">Descargar Excel</a>
+         </div> 
             
-
-        </section>
-   
+         </main>
+         
+         
     <script src="../js/menu.js"></script>
 </body>
 </html>

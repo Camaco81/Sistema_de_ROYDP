@@ -192,11 +192,13 @@ nav ul{
     section img{
         height: 250px;
         width: 400px;
+        margin: 5px;
     }
     .container-buttons a{
-        margin-left:5px ;
-        margin-right:5px;
+       margin: 5px;
         font-weight: 400;
+        display: flex;
+        flex-wrap: wrap;
      } 
     .menu-movil{
         display:flex;
@@ -220,4 +222,16 @@ nav ul{
         grid-gap:30px;
         padding: 35px 0px;
     }
+}
+@media screen and (max-width:466px){
+     section img{
+        height: 250px;
+        width: 400px;
+        margin: 5px;
+    }
+    .container-buttons a{
+        margin-left:1px ;
+        margin-right:1px;
+        font-weight: 400;
+     } 
 }
